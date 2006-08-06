@@ -1,0 +1,12 @@
+diff -aurN glom-1.0.4.orig/glom.desktop.in.in glom-1.0.4/glom.desktop.in.in
+--- glom-1.0.4.orig/glom.desktop.in.in	2006-05-21 12:50:26.000000000 +0200
++++ glom-1.0.4/glom.desktop.in.in	2006-08-06 22:47:34.599993864 +0200
+@@ -6,7 +6,7 @@
+ Terminal=false
+ Type=Application
+ Icon=glom
+-Categories=Application;GNOME;Office;GTK;Database
++Categories=GTK;GNOME;Office;Database;
+ StartupNotify=true
+ X-GNOME-DocPath=glom/index.html
+ X-GNOME-Bugzilla-Bugzilla=GNOME
