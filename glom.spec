@@ -1,30 +1,29 @@
 Summary:	A user-friendly database environment
 Summary(pl):	Przyjazne u¿ytkownikowi ¶rodowisko bazodanowe
 Name:		glom
-Version:	1.0.4
-Release:	2
+Version:	1.0.5
+Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	1bb06562bf52a66747b4ac4a2aefa3a7
+# Source0-md5:	55e5b35d268e342ed5305e9c798856a4
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-mime_update.patch
 URL:		http://www.glom.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bakery-devel >= 2.4.0
 BuildRequires:	gnome-doc-utils >= 0.7.2
 BuildRequires:	gnome-vfsmm-devel >= 2.16.0
-BuildRequires:	gtkmm-devel >= 2.10.0
+BuildRequires:	gtkmm-devel >= 2.10.1
 BuildRequires:	intltool
 BuildRequires:	iso-codes
 BuildRequires:	libgdamm-devel >= 1.3.7
-BuildRequires:	libgnome-devel >= 2.15.2
+BuildRequires:	libgnome-devel >= 2.16.0
 BuildRequires:	libgnomecanvasmm-devel >= 2.16.0
 BuildRequires:	libtool
 BuildRequires:	libxslt-devel >= 1.1.17
 BuildRequires:	python-gnome-extras-gda-devel >= 2.14.2-4
-BuildRequires:	python-pygtk-devel >= 2:2.9.6
+BuildRequires:	python-pygtk-devel >= 2:2.10.1
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	gtk+2
 Requires(post,postun):	shared-mime-info
@@ -42,7 +41,6 @@ interfejsem u¿ytkownika.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__gnome_doc_prepare}
