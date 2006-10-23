@@ -1,20 +1,20 @@
 Summary:	A user-friendly database environment
 Summary(pl):	Przyjazne u¿ytkownikowi ¶rodowisko bazodanowe
 Name:		glom
-Version:	1.0.5
+Version:	1.2.0
 Release:	1
 License:	GPL v2
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	55e5b35d268e342ed5305e9c798856a4
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.2/%{name}-%{version}.tar.bz2
+# Source0-md5:	690b14bea6086ada40764b7e878924fa
 Patch0:		%{name}-desktop.patch
 URL:		http://www.glom.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bakery-devel >= 2.4.0
-BuildRequires:	gnome-doc-utils >= 0.7.2
+BuildRequires:	gnome-doc-utils >= 0.8.0
 BuildRequires:	gnome-vfsmm-devel >= 2.16.0
-BuildRequires:	gtkmm-devel >= 2.10.1
+BuildRequires:	gtkmm-devel >= 2.10.2
 BuildRequires:	intltool
 BuildRequires:	iso-codes
 BuildRequires:	libgdamm-devel >= 1.3.7
@@ -23,9 +23,10 @@ BuildRequires:	libgnomecanvasmm-devel >= 2.16.0
 BuildRequires:	libtool
 BuildRequires:	libxslt-devel >= 1.1.17
 BuildRequires:	python-gnome-extras-gda-devel >= 2.14.2-4
-BuildRequires:	python-pygtk-devel >= 2:2.10.1
+BuildRequires:	python-pygtk-devel >= 2:2.10.3
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
 Requires(post,postun):	shared-mime-info
 Requires:	python-gnome-extras-gda >= 2.14.2-4
 %pyrequires_eq	python-modules
@@ -53,7 +54,8 @@ interfejsem u¿ytkownika.
 %{__automake}
 %configure \
 	--disable-static \
-	--disable-update-mime-database
+	--disable-update-mime-database \
+	--disable-scrollkeeper
 %{__make}
 
 %install
@@ -75,11 +77,13 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/ldconfig
 %update_mime_database
 %update_icon_cache hicolor
+%scrollkeeper_update_post
 
 %postun
 /sbin/ldconfig
 %update_mime_database
 %update_icon_cache hicolor
+%scrollkeeper_update_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -91,3 +95,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mime/packages/*.xml
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/apps/*
+%dir %{_omf_dest_dir}/%{name}
+%{_omf_dest_dir}/%{name}/glom-C.omf
+%lang(de) %{_omf_dest_dir}/%{name}/glom-de.omf
