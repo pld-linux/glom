@@ -6,7 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.2/%{name}-%{version}.tar.bz2
-# Source0-md5:	690b14bea6086ada40764b7e878924fa
+# Source0-md5:	406c28f1bb4e704c7c4fb56a48893f21
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-buildfix.patch
 URL:		http://www.glom.org/
