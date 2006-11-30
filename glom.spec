@@ -1,20 +1,21 @@
 Summary:	A user-friendly database environment
 Summary(pl):	Przyjazne u¿ytkownikowi ¶rodowisko bazodanowe
 Name:		glom
-Version:	1.2.0
+Version:	1.2.1
 Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	690b14bea6086ada40764b7e878924fa
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-buildfix.patch
 URL:		http://www.glom.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bakery-devel >= 2.4.0
 BuildRequires:	gnome-doc-utils >= 0.8.0
 BuildRequires:	gnome-vfsmm-devel >= 2.16.0
-BuildRequires:	gtkmm-devel >= 2.10.2
+BuildRequires:	gtkmm-devel >= 2.10.5
 BuildRequires:	intltool
 BuildRequires:	iso-codes
 BuildRequires:	libgdamm-devel >= 1.3.7
@@ -26,6 +27,7 @@ BuildRequires:	python-gnome-extras-gda-devel >= 2.14.2-4
 BuildRequires:	python-pygtk-devel >= 2:2.10.3
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	gtk+2
+Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	scrollkeeper
 Requires(post,postun):	shared-mime-info
 Requires:	python-gnome-extras-gda >= 2.14.2-4
@@ -42,6 +44,7 @@ interfejsem u¿ytkownika.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__gnome_doc_prepare}
