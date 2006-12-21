@@ -1,14 +1,13 @@
 Summary:	A user-friendly database environment
 Summary(pl):	Przyjazne u¿ytkownikowi ¶rodowisko bazodanowe
 Name:		glom
-Version:	1.2.1
+Version:	1.2.2
 Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.2/%{name}-%{version}.tar.bz2
-# Source0-md5:	406c28f1bb4e704c7c4fb56a48893f21
+# Source0-md5:	7b5c56317dd8386b17a05e5bfbb6c119
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-buildfix.patch
 URL:		http://www.glom.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -44,7 +43,6 @@ interfejsem u¿ytkownika.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__gnome_doc_prepare}
