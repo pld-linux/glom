@@ -1,6 +1,6 @@
 diff -urN glom-1.2.2/glom/libglom/python_embed/py_glom_record.cc glom-1.2.2.new/glom/libglom/python_embed/py_glom_record.cc
 --- glom-1.2.2/glom/libglom/python_embed/py_glom_record.cc	2006-10-10 18:04:38.000000000 +0200
-+++ glom-1.2.2.new/glom/libglom/python_embed/py_glom_record.cc	2006-12-21 23:15:40.000000000 +0100
++++ glom-1.2.2.new/glom/libglom/python_embed/py_glom_record.cc	2006-12-22 08:53:23.000000000 +0100
 @@ -170,7 +170,7 @@
  
  
@@ -10,9 +10,18 @@ diff -urN glom-1.2.2/glom/libglom/python_embed/py_glom_record.cc glom-1.2.2.new/
  Record_tp_as_mapping_length(PyGlomRecord *self)
  {
    return self->m_pMap_field_values->size();
+@@ -228,7 +228,7 @@
+ */
+ 
+ static PyMappingMethods Record_tp_as_mapping = {
+-    (inquiry)Record_tp_as_mapping_length,
++    (lenfunc)Record_tp_as_mapping_length,
+     (binaryfunc)Record_tp_as_mapping_getitem,
+     (objobjargproc)0 /* Record_tp_as_mapping_setitem */
+ };
 diff -urN glom-1.2.2/glom/libglom/python_embed/py_glom_related.cc glom-1.2.2.new/glom/libglom/python_embed/py_glom_related.cc
 --- glom-1.2.2/glom/libglom/python_embed/py_glom_related.cc	2006-05-27 17:44:17.000000000 +0200
-+++ glom-1.2.2.new/glom/libglom/python_embed/py_glom_related.cc	2006-12-21 23:16:16.000000000 +0100
++++ glom-1.2.2.new/glom/libglom/python_embed/py_glom_related.cc	2006-12-22 08:53:36.000000000 +0100
 @@ -102,7 +102,7 @@
  }
  
@@ -22,9 +31,18 @@ diff -urN glom-1.2.2/glom/libglom/python_embed/py_glom_related.cc glom-1.2.2.new
  Related_tp_as_mapping_length(PyGlomRelated *self)
  {
    return self->m_pMap_relationships->size();
+@@ -188,7 +188,7 @@
+ */
+ 
+ static PyMappingMethods Related_tp_as_mapping = {
+-    (inquiry)Related_tp_as_mapping_length,
++    (lenfunc)Related_tp_as_mapping_length,
+     (binaryfunc)Related_tp_as_mapping_getitem,
+     (objobjargproc)0 /* Related_tp_as_mapping_setitem */
+ };
 diff -urN glom-1.2.2/glom/libglom/python_embed/py_glom_relatedrecord.cc glom-1.2.2.new/glom/libglom/python_embed/py_glom_relatedrecord.cc
 --- glom-1.2.2/glom/libglom/python_embed/py_glom_relatedrecord.cc	2006-05-27 11:26:37.000000000 +0200
-+++ glom-1.2.2.new/glom/libglom/python_embed/py_glom_relatedrecord.cc	2006-12-21 23:16:37.000000000 +0100
++++ glom-1.2.2.new/glom/libglom/python_embed/py_glom_relatedrecord.cc	2006-12-22 08:53:50.000000000 +0100
 @@ -140,7 +140,7 @@
  */
  
@@ -34,3 +52,12 @@ diff -urN glom-1.2.2/glom/libglom/python_embed/py_glom_relatedrecord.cc glom-1.2
  RelatedRecord_tp_as_mapping_length(PyGlomRelatedRecord *self)
  {
    return self->m_pMap_field_values->size();
+@@ -237,7 +237,7 @@
+ */
+ 
+ static PyMappingMethods RelatedRecord_tp_as_mapping = {
+-    (inquiry)RelatedRecord_tp_as_mapping_length,
++    (lenfunc)RelatedRecord_tp_as_mapping_length,
+     (binaryfunc)RelatedRecord_tp_as_mapping_getitem,
+     (objobjargproc)0 /* RelatedRecord_tp_as_mapping_setitem */
+ };
