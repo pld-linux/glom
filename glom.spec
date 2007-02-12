@@ -1,5 +1,5 @@
 Summary:	A user-friendly database environment
-Summary(pl.UTF-8):   Przyjazne użytkownikowi środowisko bazodanowe
+Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
 Version:	1.2.2
 Release:	2
