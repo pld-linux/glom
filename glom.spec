@@ -1,5 +1,5 @@
 Summary:	A user-friendly database environment
-Summary(pl):	Przyjazne uøytkownikowi ∂rodowisko bazodanowe
+Summary(pl.UTF-8):   Przyjazne u≈ºytkownikowi ≈õrodowisko bazodanowe
 Name:		glom
 Version:	1.2.2
 Release:	2
@@ -37,9 +37,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Glom is an easy-to-use database designer and user interface.
 
-%description -l pl
-Glom jest ≥atwym w uøyciu programem do projektowania baz danych oraz
-interfejsem uøytkownika.
+%description -l pl.UTF-8
+Glom jest ≈Çatwym w u≈ºyciu programem do projektowania baz danych oraz
+interfejsem u≈ºytkownika.
 
 %prep
 %setup -q
