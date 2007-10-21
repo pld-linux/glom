@@ -1,12 +1,12 @@
 Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
-Version:	1.2.2
-Release:	3
+Version:	1.6.2
+Release:	0.1
 License:	GPL v2
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.2/%{name}-%{version}.tar.bz2
-# Source0-md5:	7b5c56317dd8386b17a05e5bfbb6c119
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	5c3da040cbfc16ffd6fca5983f8e3aca
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-python25-64bit.patch
 URL:		http://www.glom.org/
@@ -16,13 +16,17 @@ BuildRequires:	bakery-devel >= 2.4.0
 BuildRequires:	gnome-doc-utils >= 0.8.0
 BuildRequires:	gnome-vfsmm-devel >= 2.16.0
 BuildRequires:	gtkmm-devel >= 2.10.5
+BuildRequires:	gtksourceview-devel >= 1.0
+BuildRequires:	goocanvas-devel
 BuildRequires:	intltool
 BuildRequires:	iso-codes
-BuildRequires:	libgdamm-devel >= 1.3.7
+BuildRequires:	libgdamm3-devel
 BuildRequires:	libgnome-devel >= 2.16.0
 BuildRequires:	libgnomecanvasmm-devel >= 2.16.0
+BuildRequires:	libgtksourceviewmm2-devel
 BuildRequires:	libtool
 BuildRequires:	libxslt-devel >= 1.1.17
+BuildRequires:	postgresql-devel
 BuildRequires:	python-gnome-extras-gda-devel >= 2.14.2-4
 BuildRequires:	python-pygtk-devel >= 2:2.10.3
 Requires(post,postun):	/sbin/ldconfig
@@ -44,7 +48,7 @@ interfejsem użytkownika.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 
 %build
 %{__gnome_doc_prepare}
@@ -58,7 +62,8 @@ interfejsem użytkownika.
 %configure \
 	--disable-static \
 	--disable-update-mime-database \
-	--disable-scrollkeeper
+	--disable-scrollkeeper \
+	--with-postgres-utils=%{_bindir}
 %{__make}
 
 %install
@@ -101,3 +106,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_omf_dest_dir}/%{name}
 %{_omf_dest_dir}/%{name}/glom-C.omf
 %lang(de) %{_omf_dest_dir}/%{name}/glom-de.omf
+%lang(en_GB) %{_omf_dest_dir}/%{name}/glom-en_GB.omf
+%lang(sv) %{_omf_dest_dir}/%{name}/glom-sv.omf
+%lang(es) %{_omf_dest_dir}/%{name}/glom-es.omf
