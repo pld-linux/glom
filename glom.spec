@@ -1,12 +1,12 @@
 Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
-Version:	1.6.2
+Version:	1.6.12
 Release:	0.1
 License:	GPL v2
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	5c3da040cbfc16ffd6fca5983f8e3aca
+# Source0-md5:	23cfd65994a7a257de148c9ee0cd1f31
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-python25-64bit.patch
 URL:		http://www.glom.org/
