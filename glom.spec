@@ -6,7 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	23cfd65994a7a257de148c9ee0cd1f31
+# Source0-md5:	827eb7927b4b1e764772e40bf3a77cc4
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-postgres-utils.patch
 URL:		http://www.glom.org/
