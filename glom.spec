@@ -1,12 +1,12 @@
 Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
-Version:	1.6.13
-Release:	4
+Version:	1.6.17
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	827eb7927b4b1e764772e40bf3a77cc4
+# Source0-md5:	5629e1db63420a7afacfd0e110d7a1dc
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-postgres-utils.patch
 URL:		http://www.glom.org/
@@ -31,7 +31,6 @@ BuildRequires:	python-gnome-extras-gda-devel >= 2.19.1
 BuildRequires:	python-pygtk-devel >= 2:2.12.0
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
-Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
