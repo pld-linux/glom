@@ -1,12 +1,17 @@
-diff -aurN glom-1.0.4.orig/glom.desktop.in.in glom-1.0.4/glom.desktop.in.in
---- glom-1.0.4.orig/glom.desktop.in.in	2006-05-21 12:50:26.000000000 +0200
-+++ glom-1.0.4/glom.desktop.in.in	2006-08-06 22:47:34.599993864 +0200
-@@ -6,7 +6,7 @@
+diff -urN glom-1.8.5/glom.desktop.in.in glom-1.8.5.new/glom.desktop.in.in
+--- glom-1.8.5/glom.desktop.in.in	2008-10-28 17:23:33.000000000 +0100
++++ glom-1.8.5.new/glom.desktop.in.in	2009-02-11 11:17:19.000000000 +0100
+@@ -1,12 +1,11 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ _Name=Glom
+ _Comment=A user-friendly database environment.
+ Exec=glom
  Terminal=false
  Type=Application
  Icon=glom
 -Categories=Application;GNOME;Office;GTK;Database
 +Categories=GTK;GNOME;Office;Database;
  StartupNotify=true
+ MimeType=application/x-glom;
  X-GNOME-DocPath=glom/index.html
- X-GNOME-Bugzilla-Bugzilla=GNOME
