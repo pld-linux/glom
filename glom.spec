@@ -1,29 +1,28 @@
 Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
-Version:	1.6.17
+Version:	1.8.6
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	5629e1db63420a7afacfd0e110d7a1dc
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	36599a6909e40afb5bcf4c414a70c49b
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-postgres-utils.patch
 URL:		http://www.glom.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	avahi-glib-devel
-BuildRequires:	bakery-devel >= 2.4.3-2
+BuildRequires:	bakery-devel >= 2.6.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-doc-utils >= 0.10.0
-BuildRequires:	gnome-vfsmm-devel >= 2.16.0
-BuildRequires:	goocanvas-devel
+BuildRequires:	goocanvasmm-devel >= 0.13.0
 BuildRequires:	gtkmm-devel >= 2.10.5
+BuildRequires:	gtksourceviewmm2-devel
 BuildRequires:	intltool >= 0.36.0
 BuildRequires:	iso-codes
+BuildRequires:	libepc-devel >= 0.3.1
 BuildRequires:	libgdamm3-devel
-BuildRequires:	libgnome-devel >= 2.16.0
-BuildRequires:	libgtksourceviewmm-devel
 BuildRequires:	libtool
 BuildRequires:	libxslt-devel >= 1.1.17
 BuildRequires:	pkgconfig
