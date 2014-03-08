@@ -1,12 +1,12 @@
 Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
-Version:	1.24.3
-Release:	3
+Version:	1.26.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.24/%{name}-%{version}.tar.xz
-# Source0-md5:	4221d5dc3b66b6541e9713d774e47848
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.26/%{name}-%{version}.tar.xz
+# Source0-md5:	7e1d9fe660437e19134f52de0d2af5b4
 URL:		http://www.glom.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
@@ -17,12 +17,13 @@ BuildRequires:	glibmm-devel >= 2.32.0
 BuildRequires:	gnome-doc-utils >= 0.10.0
 BuildRequires:	goocanvas2-devel >= 2.0.1
 BuildRequires:	goocanvasmm2-devel >= 1.90.8
-BuildRequires:	gtkmm3-devel >= 3.4.0
+BuildRequires:	gtkmm3-devel >= 3.10.0
 BuildRequires:	gtksourceviewmm3-devel >= 3.0.0
 BuildRequires:	intltool >= 0.36.0
 BuildRequires:	iso-codes
+BuildRequires:	libarchive-devel >= 3.0
 BuildRequires:	libepc-devel >= 0.4.0
-BuildRequires:	libgda5-devel >= 5.0.3
+BuildRequires:	libgda5-devel >= 5.2.1
 BuildRequires:	libgdamm5-devel >= 4.99.6
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2.2.0
@@ -50,18 +51,18 @@ Requires:	evince >= 3.0
 Requires:	glibmm >= 2.32.0
 Requires:	goocanvas2 >= 2.0.1
 Requires:	goocanvasmm2 >= 1.90.8
-Requires:	gtkmm3 >= 3.4.0
+Requires:	gtkmm3 >= 3.10.0
 Requires:	gtksourceviewmm3 >= 3.0.0
 Requires:	iso-codes
 Requires:	libepc >= 0.4.0
-Requires:	libgda5 >= 5.0.3
+Requires:	libgda5 >= 5.2.1
 Requires:	libgdamm5 >= 4.99.6
 Requires:	libxml++ >= 2.23.1
 Requires:	libxslt >= 1.1.17
 Requires:	python-pygobject3 >= 2.29.0
-Suggests:	libgda5-provider-mysql >= 5.0.3
-Suggests:	libgda5-provider-postgres >= 5.0.3
-Suggests:	libgda5-provider-sqlite >= 5.0.3
+Suggests:	libgda5-provider-mysql >= 5.2.1
+Suggests:	libgda5-provider-postgres >= 5.2.1
+Suggests:	libgda5-provider-sqlite >= 5.2.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -134,6 +135,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 %{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.la
 
+install -d $RPM_BUILD_ROOT%{_examplesdir}
+cp -pr examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
 %find_lang %{name} --with-gnome --with-omf
 
 %clean
@@ -161,9 +165,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/glom_export_po_all
 %attr(755,root,root) %{_bindir}/glom_import_po_all
 %attr(755,root,root) %{_bindir}/glom_test_connection
-%attr(755,root,root) %{_libdir}/libglom-1.24.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libglom-1.24.so.0
-%attr(755,root,root) %{py_sitedir}/glom_1_24.so
+%attr(755,root,root) %{_libdir}/libglom-1.26.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libglom-1.26.so.0
+%attr(755,root,root) %{py_sitedir}/glom_1_26.so
 %{_datadir}/%{name}
 %{_datadir}/appdata/glom.appdata.xml
 %{_datadir}/mime/packages/glom.xml
@@ -172,18 +176,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libglom-1.24.so
-%{_includedir}/glom-1.24
-%{_pkgconfigdir}/glom-1.24.pc
+%attr(755,root,root) %{_libdir}/libglom-1.26.so
+%{_includedir}/glom-1.26
+%{_pkgconfigdir}/glom-1.26.pc
 
 %files apidocs
 %defattr(644,root,root,755)
-%{_docdir}/libglom-1.24
-%{_docdir}/pyglom_1_24
-%{_datadir}/devhelp/books/libglom-1.24
+%{_docdir}/libglom-1.26
+%{_docdir}/pyglom_1_26
+%{_datadir}/devhelp/books/libglom-1.26
 
 %files examples
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/glom_create_from_example
-%dir %{_docdir}/glom
-%{_docdir}/glom/examples
+%{_examplesdir}/%{name}-%{version}
