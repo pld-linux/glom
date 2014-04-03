@@ -2,7 +2,7 @@ Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
 Version:	1.26.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.26/%{name}-%{version}.tar.xz
@@ -46,7 +46,6 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	scrollkeeper
 Requires(post,postun):	shared-mime-info
-%pyrequires_eq	python-modules
 Requires:	evince >= 3.0
 Requires:	glibmm >= 2.32.0
 Requires:	goocanvas2 >= 2.0.1
@@ -59,6 +58,7 @@ Requires:	libgda5 >= 5.2.1
 Requires:	libgdamm5 >= 4.99.6
 Requires:	libxml++ >= 2.23.1
 Requires:	libxslt >= 1.1.17
+Requires:	python-modules
 Requires:	python-pygobject3 >= 2.29.0
 Suggests:	libgda5-provider-mysql >= 5.2.1
 Suggests:	libgda5-provider-postgres >= 5.2.1
@@ -88,6 +88,9 @@ Pliki nagłówkowe biblioteki Glom.
 Summary:	API documentation for Glom library and its Python binding
 Summary(pl.UTF-8):	Dokumentacja API biblioteki Glom i jej wiązań do Pythona
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for Glom library and its Python binding.
