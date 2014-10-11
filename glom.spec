@@ -1,12 +1,12 @@
 Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
-Version:	1.26.0
-Release:	2
+Version:	1.28.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.26/%{name}-%{version}.tar.xz
-# Source0-md5:	7e1d9fe660437e19134f52de0d2af5b4
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.28/%{name}-%{version}.tar.xz
+# Source0-md5:	434fcdcb5b4ddf50364e235de247c81b
 URL:		http://www.glom.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
@@ -17,14 +17,14 @@ BuildRequires:	glibmm-devel >= 2.32.0
 BuildRequires:	gnome-doc-utils >= 0.10.0
 BuildRequires:	goocanvas2-devel >= 2.0.1
 BuildRequires:	goocanvasmm2-devel >= 1.90.8
-BuildRequires:	gtkmm3-devel >= 3.10.0
+BuildRequires:	gtkmm3-devel >= 3.14.0
 BuildRequires:	gtksourceviewmm3-devel >= 3.0.0
 BuildRequires:	intltool >= 0.36.0
 BuildRequires:	iso-codes
 BuildRequires:	libarchive-devel >= 3.0
 BuildRequires:	libepc-devel >= 0.4.0
 BuildRequires:	libgda5-devel >= 5.2.1
-BuildRequires:	libgdamm5-devel >= 4.99.6
+BuildRequires:	libgdamm5-devel >= 4.99.8
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2.2.0
 BuildRequires:	libxml++-devel >= 2.23.1
@@ -50,12 +50,12 @@ Requires:	evince >= 3.0
 Requires:	glibmm >= 2.32.0
 Requires:	goocanvas2 >= 2.0.1
 Requires:	goocanvasmm2 >= 1.90.8
-Requires:	gtkmm3 >= 3.10.0
+Requires:	gtkmm3 >= 3.14.0
 Requires:	gtksourceviewmm3 >= 3.0.0
 Requires:	iso-codes
 Requires:	libepc >= 0.4.0
 Requires:	libgda5 >= 5.2.1
-Requires:	libgdamm5 >= 4.99.6
+Requires:	libgdamm5 >= 4.99.8
 Requires:	libxml++ >= 2.23.1
 Requires:	libxslt >= 1.1.17
 Requires:	python-modules
@@ -126,6 +126,8 @@ Przykłady dla Gloma.
 	--disable-silent-rules \
 	--disable-static \
 	--disable-update-mime-database \
+	--enable-mysql \
+	--enable-sqlite \
 	--with-postgres-utils=%{_bindir}
 %{__make}
 
