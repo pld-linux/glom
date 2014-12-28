@@ -12,7 +12,7 @@ BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	boost-devel
 BuildRequires:	evince-devel >= 3.0
-BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glibmm-devel >= 2.32.0
 BuildRequires:	gnome-doc-utils >= 0.10.0
 BuildRequires:	goocanvas2-devel >= 2.0.1
