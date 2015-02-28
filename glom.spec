@@ -1,12 +1,12 @@
 Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
-Version:	1.28.0
-Release:	3
+Version:	1.28.3
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.28/%{name}-%{version}.tar.xz
-# Source0-md5:	434fcdcb5b4ddf50364e235de247c81b
+# Source0-md5:	daeef0f61775c5052e2e0a2df0001bfc
 URL:		http://www.glom.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
