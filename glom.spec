@@ -2,7 +2,7 @@ Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
 Version:	1.30.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.30/%{name}-%{version}.tar.xz
@@ -27,7 +27,7 @@ BuildRequires:	libgda5-devel >= 5.2.1
 BuildRequires:	libgdamm5-devel >= 4.99.10
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2.2.0
-BuildRequires:	libxml++-devel >= 2.24.0
+BuildRequires:	libxml++2-devel >= 2.24.0
 BuildRequires:	libxslt-devel >= 1.1.17
 BuildRequires:	mm-common >= 0.9.5
 BuildRequires:	pkgconfig
@@ -55,7 +55,7 @@ Requires:	iso-codes
 Requires:	libepc >= 0.4.0
 Requires:	libgda5 >= 5.2.1
 Requires:	libgdamm5 >= 4.99.10
-Requires:	libxml++ >= 2.24.0
+Requires:	libxml++2 >= 2.24.0
 Requires:	libxslt >= 1.1.17
 Requires:	python3-modules >= 1:3.2
 Requires:	python3-pygobject3 >= 2.29.0
