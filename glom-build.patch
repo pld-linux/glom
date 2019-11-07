@@ -1,0 +1,11 @@
+--- glom-1.32.0/glom/glom_test_connection.cc.orig	2019-10-28 14:38:20.000000000 +0100
++++ glom-1.32.0/glom/glom_test_connection.cc	2019-10-31 07:57:44.519558468 +0100
+@@ -200,7 +200,7 @@
+   {
+     //TODO: Move some of the *CentralHosted API into a multiply-inherited Server base class,
+     //to avoid the duplication?
+-    auto derived_backend = std::make_shared<Glom::ConnectionPoolBackends::MySQLCentralHosted;
++    auto derived_backend = std::make_shared<Glom::ConnectionPoolBackends::MySQLCentralHosted>();
+ 
+     //Use a specified port, or try all suitable ports:
+     if(group.m_arg_server_port)

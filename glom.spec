@@ -1,12 +1,14 @@
 Summary:	A user-friendly database environment
 Summary(pl.UTF-8):	Przyjazne użytkownikowi środowisko bazodanowe
 Name:		glom
-Version:	1.30.4
-Release:	9
+Version:	1.32.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.30/%{name}-%{version}.tar.xz
-# Source0-md5:	6f4d3b906e6563798c199517e78edaf7
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.32/%{name}-%{version}.tar.xz
+# Source0-md5:	194d2dec2254f48c49f518935302992f
+Patch0:		%{name}-build.patch
+Patch1:		%{name}-pc.patch
 URL:		http://www.glom.org/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
@@ -14,20 +16,21 @@ BuildRequires:	boost-devel
 BuildRequires:	boost-python3-devel
 BuildRequires:	evince-devel >= 3.0
 BuildRequires:	gettext-tools >= 0.17
-BuildRequires:	glibmm-devel >= 2.46.1
+BuildRequires:	glibmm-devel >= 2.47.4
 BuildRequires:	goocanvas2-devel >= 2.0.1
 BuildRequires:	goocanvasmm2-devel >= 1.90.11
-BuildRequires:	gtkmm3-devel >= 3.18.0
+BuildRequires:	gtkmm3-devel >= 3.22.0
 BuildRequires:	gtksourceviewmm3-devel >= 3.18.0
 BuildRequires:	intltool >= 0.36.0
 BuildRequires:	iso-codes
 BuildRequires:	libarchive-devel >= 3.0
 BuildRequires:	libepc-devel >= 0.4.0
-BuildRequires:	libgda5-devel >= 5.2.1
+BuildRequires:	libgda5-devel >= 5.2.9
 BuildRequires:	libgdamm5-devel >= 4.99.10
-BuildRequires:	libstdc++-devel
+BuildRequires:	libsigc++-devel >= 2.9.2
+BuildRequires:	libstdc++-devel >= 6:5
 BuildRequires:	libtool >= 2:2.2.0
-BuildRequires:	libxml++2-devel >= 2.24.0
+BuildRequires:	libxml++-devel >= 3.0.0
 BuildRequires:	libxslt-devel >= 1.1.17
 BuildRequires:	mm-common >= 0.9.5
 BuildRequires:	pkgconfig
@@ -46,22 +49,23 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	shared-mime-info
 Requires:	evince >= 3.0
-Requires:	glibmm >= 2.46.1
+Requires:	glibmm >= 2.47.4
 Requires:	goocanvas2 >= 2.0.1
 Requires:	goocanvasmm2 >= 1.90.11
-Requires:	gtkmm3 >= 3.18.0
+Requires:	gtkmm3 >= 3.22.0
 Requires:	gtksourceviewmm3 >= 3.18.0
 Requires:	iso-codes
 Requires:	libepc >= 0.4.0
-Requires:	libgda5 >= 5.2.1
+Requires:	libgda5 >= 5.2.9
 Requires:	libgdamm5 >= 4.99.10
-Requires:	libxml++2 >= 2.24.0
+Requires:	libsigc++ >= 2.9.2
+Requires:	libxml++ >= 3.0.0
 Requires:	libxslt >= 1.1.17
 Requires:	python3-modules >= 1:3.2
 Requires:	python3-pygobject3 >= 2.29.0
-Suggests:	libgda5-provider-mysql >= 5.2.1
-Suggests:	libgda5-provider-postgres >= 5.2.1
-Suggests:	libgda5-provider-sqlite >= 5.2.1
+Suggests:	libgda5-provider-mysql >= 5.2.9
+Suggests:	libgda5-provider-postgres >= 5.2.9
+Suggests:	libgda5-provider-sqlite >= 5.2.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -76,6 +80,11 @@ Summary:	Header files for Glom library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Glom
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	glibmm-devel >= 2.47.4
+Requires:	libgdamm5-devel >= 4.99.10
+Requires:	libstdc++-devel >= 6:5
+Requires:	libxml++-devel >= 3.0.0
+Requires:	libxslt-devel >= 1.1.17
 
 %description devel
 Header files for Glom library.
@@ -110,6 +119,8 @@ Przykłady dla Gloma.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__gettextize}
@@ -167,9 +178,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/glom_export_po_all
 %attr(755,root,root) %{_bindir}/glom_import_po_all
 %attr(755,root,root) %{_bindir}/glom_test_connection
-%attr(755,root,root) %{_libdir}/libglom-1.30.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libglom-1.30.so.0
-%attr(755,root,root) %{py3_sitedir}/glom_1_30.so
+%attr(755,root,root) %{_libdir}/libglom-1.32.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libglom-1.32.so.0
+%attr(755,root,root) %{py3_sitedir}/glom_1_32.so
 %{_datadir}/%{name}
 %{_datadir}/appdata/glom.appdata.xml
 %{_datadir}/mime/packages/glom.xml
@@ -179,15 +190,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libglom-1.30.so
-%{_includedir}/glom-1.30
-%{_pkgconfigdir}/glom-1.30.pc
+%attr(755,root,root) %{_libdir}/libglom-1.32.so
+%{_includedir}/glom-1.32
+%{_pkgconfigdir}/glom-1.32.pc
 
 %files apidocs
 %defattr(644,root,root,755)
-%{_docdir}/libglom-1.30
-%{_docdir}/pyglom_1_30
-%{_datadir}/devhelp/books/libglom-1.30
+%{_docdir}/libglom-1.32
+%{_docdir}/pyglom_1_32
+%{_datadir}/devhelp/books/libglom-1.32
 
 %files examples
 %defattr(644,root,root,755)
