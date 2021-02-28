@@ -96,9 +96,7 @@ Pliki nagłówkowe biblioteki Glom.
 Summary:	API documentation for Glom library and its Python binding
 Summary(pl.UTF-8):	Dokumentacja API biblioteki Glom i jej wiązań do Pythona
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for Glom library and its Python binding.
