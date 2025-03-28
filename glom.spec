@@ -5,11 +5,11 @@ Version:	1.32.0
 Release:	14
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glom/1.32/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/glom/1.32/%{name}-%{version}.tar.xz
 # Source0-md5:	194d2dec2254f48c49f518935302992f
 Patch0:		%{name}-build.patch
 Patch1:		%{name}-pc.patch
-URL:		http://www.glom.org/
+URL:		https://gitlab.gnome.org/Archive/glom
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	boost-devel
